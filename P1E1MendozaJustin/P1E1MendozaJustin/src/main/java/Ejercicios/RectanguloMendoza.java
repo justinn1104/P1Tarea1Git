@@ -1,6 +1,5 @@
 package Ejercicios;
 import java.util.Scanner;
-
 public class RectanguloMendoza {
     Scanner cin = new Scanner(System.in);
     private float baseMendoza, alturaMendoza;
@@ -32,16 +31,25 @@ public class RectanguloMendoza {
     };
     
     public void datosMendoza(){
-        System.out.println("Formula b*h=A"+
-                "Base: " + getBaseMendoza()+
-                "Altura: " + getAlturaMendoza()+
-                "\n Area: "+ areaMendoza());
+        System.out.println("\n\nRectangulo"
+                +"\nFormula b*h=A"
+                +"\nBase: " + getBaseMendoza()
+                +"\nAltura: " + getAlturaMendoza()
+                +"\nArea: "+ areaMendoza());
     };
    
     public void insertarDatosMendoza(){
-        System.out.println("Igresa la base para el rectangulo: ");
+        System.out.println("Igresa la base para el rectangulo: [b>0]");
         setBaseMendoza(cin.nextFloat());
-        System.out.println("Igresa el altura para el rectangulo: ");
+        while(getBaseMendoza()<=0){
+            System.out.println("Vuelva a igresar la base para el rectangulo: [b>0]");
+            setBaseMendoza(cin.nextFloat());
+        }
+        System.out.println("Igresa la altura para el rectangulo: [h>0]");
         setAlturaMendoza(cin.nextFloat());
+        while(getAlturaMendoza()<=0){
+            System.out.println("Vuelva a igresar la altura para el rectangulo: [h>0]");
+            setAlturaMendoza(cin.nextFloat());
+        }
     };
 }

@@ -1,8 +1,5 @@
 package Ejercicios;
-
 import java.util.Scanner;
-
-
 public class CirculoMendoza {
     Scanner cin = new Scanner(System.in);
     private float radioMendoza;
@@ -25,14 +22,19 @@ public class CirculoMendoza {
     }
     
     public void datosMendoza(){
-        System.out.println("Formula Pi*r^2=A"+
-                "Radio: " + getRadioMendoza()+
-                "\n Area: "+ AreaMendoza());
+        System.out.println("\n\nCirculo"
+                +"\nFormula Pi*r^2=A"
+                +"\nRadio: "+getRadioMendoza()
+                +"\nArea: "+ AreaMendoza());
     };
     
     public void insertarDatosMendoza(){
-        System.out.println("Igresa el radio para el circulo: ");
+        System.out.println("Igresa el radio para el circulo: [r>0]");
         setRadioMendoza(cin.nextFloat());
+        while(getRadioMendoza()<=0){
+            System.out.println("Vuelve a igresar el radio para el circulo: [r>0]");
+            setRadioMendoza(cin.nextFloat());
+        }
     };
     
 }

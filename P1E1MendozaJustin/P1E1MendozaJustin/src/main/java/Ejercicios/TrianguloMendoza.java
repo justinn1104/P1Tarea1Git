@@ -1,7 +1,5 @@
 package Ejercicios;
-
 import java.util.Scanner;
-
 public class TrianguloMendoza {
     Scanner cin = new Scanner(System.in);
     
@@ -23,7 +21,8 @@ public class TrianguloMendoza {
     public float getAlturaMendoza() {
         return alturaMendoza;
     }
-
+ 
+    
     public void setAlturaMendoza(float alturaMendoza) {
         this.alturaMendoza = alturaMendoza;
     }
@@ -34,16 +33,25 @@ public class TrianguloMendoza {
     };
     
     public void datosMendoza(){
-        System.out.println("Formula (b*h)/2=A"+
-                "Base: " + getBaseMendoza()+
-                "Altura: " + getAlturaMendoza()+
-                "\n Area: "+ areaMendoza());
+        System.out.println("\n\nTriangulo"
+                +"\nFormula (b*h)/2=A"
+                +"\nBase: " + getBaseMendoza()
+                +"\nAltura: " + getAlturaMendoza()
+                +"\nArea: "+ areaMendoza());
     };
     
     public void insertarDatosMendoza(){
-        System.out.println("Igresa la base para el triangulo: ");
+        System.out.println("Igresa la base para el triangulo: [b>0]");
         setBaseMendoza(cin.nextFloat());
-        System.out.println("Igresa el altura para el triangulo: ");
+        while(getBaseMendoza()<=0){
+            System.out.println("Vuelva a igresar la base para el triangulo: [b>0]");
+            setBaseMendoza(cin.nextFloat());
+        }
+        System.out.println("Igresa la altura para el triangulo: [h>0]");
         setAlturaMendoza(cin.nextFloat());
+        while(getAlturaMendoza()<=0){
+            System.out.println("Vuelva a igresar la altura para el triangulo: [h>0]");
+            setAlturaMendoza(cin.nextFloat());
+        }
     };
 }
